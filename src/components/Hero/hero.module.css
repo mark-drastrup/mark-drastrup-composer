@@ -12,9 +12,13 @@
     margin-bottom: var(--margin-md);
   }
   
-  .video {
-    height: 190px;
-    width:110%;
-    border: none;
-    border-radius: 20px;
-  }
+.video {
+  height: 190px;
+  width:110%;
+  border: none;
+  border-radius: 20px;
+}
+
+.waves {
+  position: absolute;
+}

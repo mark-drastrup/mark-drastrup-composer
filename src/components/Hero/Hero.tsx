@@ -14,7 +14,7 @@ export function Hero() {
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       ></iframe>
-      <Waves />
+      <Waves className={styles.waves} />
     </section>
   );
 }
