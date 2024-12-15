@@ -1,0 +1,20 @@
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+.title {
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 53px;
+    margin-bottom: var(--margin-md);
+  }
+  
+  .video {
+    height: 190px;
+    width:110%;
+    border: none;
+    border-radius: 20px;
+  }

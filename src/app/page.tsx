@@ -1,13 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Hero } from "@/components/Hero/Hero";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <></>
-    // <main className={styles.main}>
-    //   <div className={styles.center}>
-    //     <h1>Coming soon...</h1>
-    //   </div>
-    // </main>
+    <main className={styles["main-content"]}>
+      <Hero />
+    </main>
   );
 }
