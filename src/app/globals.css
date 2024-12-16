@@ -1,14 +1,29 @@
+@import "react-range-slider-input/dist/style.css";
+
 :root {
-  --background: #161619;
+  --primary-black: #161619;
+  --secondary-black: #25242A;
+
   --primary-glow: radial-gradient(
     closest-side,
     rgba(179, 50, 250, 0.4),
     rgba(255, 255, 255, 0)
   );
+
   --header-height: 76px;
+
   --margin-sm: 16px;
   --margin-md: 26px;
   --margin-lg: 60px;
+
+  --padding-sm: 12px;
+
+  --border-radius-sm: 10px;
+  --border-radius-lg: 20px;
+
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 42px;
 
 
   /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
@@ -60,7 +75,58 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--primary-black);
   height: 100vh;
   color: white
+}
+
+#progress-slider {
+  height: 4px;
+}
+
+#progress-slider .range-slider__thumb[data-lower] {
+  width: 0 !important;
+}
+
+#progress-slider .range-slider__thumb[data-upper] {
+  width: 16px !important;
+  height: 16px !important;
+  background: #8907E9;
+}
+
+#progress-slider.range-slider {
+  background: var(--primary-black)
+}
+
+#progress-slider .range-slider__range {
+  background: linear-gradient(to right, #8b07e964, #b432fa8a) !important;
+  /* background: linear-gradient(to right, #8907E94D, #B332FA4D) !important; */
+  background-size: 200% 100% !important;
+  background-position: 50% 0 !important;
+}
+
+#volume-slider {
+  width: 4px;
+  height: 100px;
+}
+
+#volume-slider .range-slider__thumb[data-lower] {
+  width: 16px !important;
+  height: 16px !important;
+  background: white
+}
+
+#volume-slider .range-slider__thumb[data-upper] {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+#volume-slider.range-slider {
+  background: var(--primary-black)
+}
+
+#volume-slider .range-slider__range {
+  background: white !important;
+  background-size: 200% 100% !important;
+  background-position: 50% 0 !important;
 }

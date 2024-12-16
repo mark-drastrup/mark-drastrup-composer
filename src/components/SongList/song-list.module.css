@@ -1,0 +1,6 @@
+.songs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg)
+}
