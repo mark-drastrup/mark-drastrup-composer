@@ -17,9 +17,12 @@
   --margin-lg: 60px;
 
   --padding-sm: 12px;
+  --padding-md: 24px;
+  --padding-lg: 48px;
 
   --border-radius-sm: 10px;
-  --border-radius-lg: 20px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 50px;
 
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -74,10 +77,21 @@
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+html {
+  overflow: hidden;
+}
+
+
 body {
   background: var(--primary-black);
   height: 100vh;
-  color: white
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #progress-slider {
