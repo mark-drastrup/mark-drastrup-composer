@@ -26,6 +26,7 @@
     align-items: center;
     gap: 50px;
     padding-top: 135px;
+    z-index: 20;
 }
 
 .navigation-open {
@@ -49,4 +50,5 @@
     width: 700px;
     height: 700px;
     background: var(--primary-glow);
+    z-index: 21;
   }
