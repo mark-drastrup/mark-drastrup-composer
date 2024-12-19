@@ -14,7 +14,7 @@ const SONGS = [
 
 export function SongList() {
   return (
-    <section className={styles.songs}>
+    <section className={styles.songs} id="songs">
       {SONGS.map((song) => (
         <AudioPlayer key={song.title} title={song.title} path={song.path} />
       ))}

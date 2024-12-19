@@ -9,16 +9,16 @@ export function Footer() {
       <nav>
         <ul className={styles["nav-list"]}>
           <li className={styles["list-item"]}>
-            <a>Home</a>
+            <a href="/#home">Home</a>
           </li>
           <li className={styles["list-item"]}>
-            <a>Songs</a>
+            <a href="/#songs">Songs</a>
           </li>
           <li className={styles["list-item"]}>
-            <a>About</a>
+            <a href="/#about">About</a>
           </li>
           <li className={styles["list-item"]}>
-            <a>Contact</a>
+            <a href="/#contact">Contact</a>
           </li>
         </ul>
       </nav>

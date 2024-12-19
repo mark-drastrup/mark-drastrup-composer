@@ -3,7 +3,7 @@ import styles from "./about-me.module.css";
 
 export function AboutMe() {
   return (
-    <section className={styles["about-me"]}>
+    <section className={styles["about-me"]} id="about">
       <h2 className={styles.title}>About Me</h2>
       <p className={styles.paragraph}>
         I am a passionate composer specializing in music for video games and

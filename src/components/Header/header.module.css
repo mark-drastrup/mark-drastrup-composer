@@ -36,6 +36,7 @@
 .navlink {
     text-decoration: none;
     color: white;
+    z-index: 1;
 }
 
 .waves {

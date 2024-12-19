@@ -27,6 +27,11 @@
     font-weight: 300;
 }
 
+.list-item a {
+    text-decoration: none;
+    color: white;
+}
+
 .list-item::before {
     content: '';
     position: absolute;

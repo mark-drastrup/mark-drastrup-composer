@@ -92,6 +92,7 @@ body {
   color: white;
   overflow-y: auto;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #progress-slider {
