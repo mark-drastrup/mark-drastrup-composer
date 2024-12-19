@@ -5,3 +5,6 @@ export * from "./Waves";
 export * from "./SpeakerLoud";
 export * from "./Play";
 export * from "./Pause";
+export * from "./LogoHalf";
+export * from "./ArrowRight";
+export * from "./LogoPurple";
