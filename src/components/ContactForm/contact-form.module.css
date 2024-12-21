@@ -64,3 +64,9 @@
     width: 24px;
     height: 24px;
 }
+
+@media (min-width: 768px) {
+    .contact-form {
+        margin-top: 0;
+    }
+}

@@ -3,7 +3,7 @@ import styles from "./contact-me.module.css";
 
 export function ContactMe() {
   return (
-    <section className={styles["contact-me"]} id="contact">
+    <div className={styles["contact-me"]} id="contact">
       <h2 className={styles.title}>Contact Me</h2>
 
       <p className={styles.paragraph}>
@@ -15,6 +15,6 @@ export function ContactMe() {
       </p>
 
       <LogoHalf className={styles.logo} />
-    </section>
+    </div>
   );
 }

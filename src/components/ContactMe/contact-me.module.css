@@ -13,6 +13,8 @@
     top: 50%;
     transform: translateY(-50%);
     left: 0;
+    width: 116px;
+    height: 227px;
 }
 
 .title {
@@ -25,4 +27,29 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
+}
+
+@media (min-width: 768px) {
+    .contact-me {
+        margin-top: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .logo {
+        position:absolute;
+        top: auto;
+        transform: none;
+        left: -83px;
+        bottom: 0;
+        width: 354px;
+        height: 364px;
+    }
 }

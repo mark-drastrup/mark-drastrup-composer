@@ -5,8 +5,27 @@
   padding: 35px;
 }
 
+.contact-section {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contact-section {
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
 @media (min-width: 1024px) {
   .main-content {
     padding-inline: var(--padding-xl);
   }
+
+  .contact-section {
+    grid-template-columns: 482px 1fr;
+    margin-top: var(--margin-md);
+  }
 }
+
+

@@ -11,8 +11,11 @@ export default function LandingPage() {
       <Hero />
       <SongList />
       <AboutMe />
-      <ContactMe />
-      <ContactForm />
+
+      <section className={styles["contact-section"]}>
+        <ContactMe />
+        <ContactForm />
+      </section>
     </main>
   );
 }
