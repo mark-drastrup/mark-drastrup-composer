@@ -1,7 +1,6 @@
 .audio-player {
     background: var(--secondary-black);
     height: 77px;
-    width: 320px;
     padding-inline: var(--padding-sm);
     border-radius: var(--border-radius-sm);
     display: grid;
