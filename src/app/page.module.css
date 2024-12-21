@@ -4,3 +4,9 @@
   align-items: center;
   padding: 35px;
 }
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-inline: var(--padding-xl);
+  }
+}

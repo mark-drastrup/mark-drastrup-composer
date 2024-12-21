@@ -1,16 +1,17 @@
 .hero-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* width: 100% */
+}
 
 .title {
-    font-weight: 300;
-    font-size: 44px;
-    line-height: 53px;
-    margin-bottom: var(--margin-md);
-  }
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 53px;
+  margin-bottom: var(--margin-md);
+}
   
 .video {
   height: 190px;
@@ -22,4 +23,27 @@
 .waves {
   position: absolute;
   z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .hero-wrapper {
+    width: 100%
+  }
+
+  .title {
+    font-size: 60px;
+    line-height: 85px;
+  }
+
+  .video {
+    height: 400px;
+    width: 100%;
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video {
+    height: 575px;
+  }
 }
