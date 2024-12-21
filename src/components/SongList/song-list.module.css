@@ -1,0 +1,17 @@
+.songs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    position: relative;
+}
+
+.gradient {
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    background: var(--primary-glow);
+    z-index: -1;
+    left: 25px;
+    top: -50px;
+}

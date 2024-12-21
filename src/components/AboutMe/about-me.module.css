@@ -1,0 +1,23 @@
+.about-me {
+    margin-top: var(--spacing-lg)
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+}
+
+.paragraph {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    margin-bottom: var(--spacing-sm)
+}
+
+.image {
+    width: 100%;
+    height:auto;
+    border-radius: var(--border-radius-sm);
+    margin-top: var(--spacing-lg)
+}

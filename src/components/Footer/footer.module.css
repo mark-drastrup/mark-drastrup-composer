@@ -1,0 +1,53 @@
+.footer {
+    background: var(--secondary-black);
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-md);
+    margin-inline: 35px;
+    margin-bottom: 35px;
+}
+
+.logo {
+    width: 150px
+}
+
+.nav-list {
+    padding-inline: 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 34px;
+    margin-block: 28px
+}
+
+.list-item {
+    position: relative;
+    padding-left: 20px; 
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.list-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: url('../../../public/custom-bullet.svg')  no-repeat center / contain;
+}
+
+.copyright {
+    font-size: 12px;
+    color: white;
+    font-weight: 300;
+    line-height: 20px;
+    /* padding-block: var(--padding-md); */
+}
+
