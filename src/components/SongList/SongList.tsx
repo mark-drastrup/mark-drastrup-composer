@@ -10,6 +10,14 @@ const SONGS = [
     title: "Battle Music",
     path: "audio/battle_music.wav",
   },
+  {
+    title: "Test Song 3",
+    path: "audio/battle_music.wav",
+  },
+  {
+    title: "Test Song 4",
+    path: "audio/battle_music.wav",
+  },
 ];
 
 export function SongList() {
@@ -18,6 +26,7 @@ export function SongList() {
       {SONGS.map((song) => (
         <AudioPlayer key={song.title} title={song.title} path={song.path} />
       ))}
+      <div className={styles.gradient}></div>
     </section>
   );
 }

@@ -45,11 +45,11 @@
 }
 
 .gradient {
-    position: fixed;
+    position: absolute;
     top: -450px;
     left: -400px;
     width: 700px;
-    height: 700px;
+    height: 800px;
     background: var(--primary-glow);
     z-index: 21;
   }
