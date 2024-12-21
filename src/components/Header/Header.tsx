@@ -22,7 +22,41 @@ export function Header() {
       <div className={styles["logo-wrapper"]}>
         <LogoAndNameWhite />
       </div>
-      <BurgerMenu onClick={() => setOpenMenu(!openMenu)} />
+      <BurgerMenu
+        className={styles["burger-menu"]}
+        onClick={() => setOpenMenu(!openMenu)}
+      />
+
+      <nav className={styles["navigation-desktop"]}>
+        <a
+          className={styles.navlink}
+          href="/#home"
+          onClick={() => setOpenMenu(false)}
+        >
+          Home
+        </a>
+        <a
+          className={styles.navlink}
+          href="/#songs"
+          onClick={() => setOpenMenu(false)}
+        >
+          Songs
+        </a>
+        <a
+          className={styles.navlink}
+          href="/#about"
+          onClick={() => setOpenMenu(false)}
+        >
+          About
+        </a>
+        <a
+          className={styles.navlink}
+          href="/#contact"
+          onClick={() => setOpenMenu(false)}
+        >
+          Contact
+        </a>
+      </nav>
 
       <nav
         className={`${styles.navigation} ${

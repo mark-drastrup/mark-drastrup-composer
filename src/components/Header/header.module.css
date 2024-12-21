@@ -33,6 +33,10 @@
     transform: translateX(0);
 }
 
+.navigation-desktop {
+    display: none;
+}
+
 .navlink {
     text-decoration: none;
     color: white;
@@ -53,3 +57,31 @@
     background: var(--primary-glow);
     z-index: 21;
   }
+
+
+@media (min-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .navigation-desktop {
+        display: flex;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+}
+    
+@media (min-width: 1024px) {
+    .header {
+        padding-inline: var(--padding-xl);
+        padding-block: var(--padding-lg);
+    }
+
+    .logo-wrapper {
+        width: 240px
+    }
+}

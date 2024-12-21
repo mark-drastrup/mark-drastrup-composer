@@ -1,8 +1,9 @@
 type BurgerMenuProps = {
   onClick: () => void;
+  className?: string;
 };
 
-export function BurgerMenu({ onClick }: BurgerMenuProps) {
+export function BurgerMenu({ onClick, className }: BurgerMenuProps) {
   return (
     <svg
       width="26"
@@ -11,6 +12,7 @@ export function BurgerMenu({ onClick }: BurgerMenuProps) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
+      className={className}
     >
       <rect x="5.87109" y="0.395508" width="20" height="2" fill="white" />
       <rect x="0.871094" y="8.39551" width="25" height="2" fill="white" />
