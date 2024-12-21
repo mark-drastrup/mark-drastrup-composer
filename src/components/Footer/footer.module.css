@@ -48,6 +48,38 @@
     color: white;
     font-weight: 300;
     line-height: 20px;
-    /* padding-block: var(--padding-md); */
+    margin-top: var(--spacing-md)
 }
+  
+@media (min-width: 1024px) {
+    .footer {
+        margin-inline: var(--padding-xl);
+        margin-bottom: var(--padding-xl);
+        padding-inline: var(--padding-lg);
+        padding-block: var(--padding-md);
+    }
 
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 285px
+    }
+
+    .nav-list {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        column-gap: var(--spacing-lg);
+    }
+
+    .break {
+        display: none;
+    }
+
+    .copyright {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
