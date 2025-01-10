@@ -17,9 +17,15 @@
     top: -50px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .songs {
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .songs {
+        margin-top: var(--spacing-xl)
     }
 }

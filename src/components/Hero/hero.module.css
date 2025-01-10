@@ -25,6 +25,12 @@
   z-index: -1;
 }
 
+@media (min-width: 640px) {
+  .title {
+      align-self: flex-start;
+  }
+}
+
 @media (min-width: 768px) {
   .hero-wrapper {
     width: 100%
@@ -45,5 +51,11 @@
 @media (min-width: 1024px) {
   .video {
     height: 575px;
+  }
+
+  .title {
+    font-size: 75px;
+    line-height: 95px;
+    margin-bottom: var(--margin-lg);
   }
 }
