@@ -13,15 +13,23 @@ import { SpeakerLoud } from "@/icons/SpeakerLoud";
 type AudioPlayerProps = {
   title: string;
   path: string;
+  currentlyPlayingSong: string | null;
+  setCurrentlyPlayingSong: (song: string | null) => void;
 };
 
-export function AudioPlayer({ title, path }: AudioPlayerProps) {
+export function AudioPlayer({
+  title,
+  path,
+  currentlyPlayingSong,
+  setCurrentlyPlayingSong,
+}: AudioPlayerProps) {
   const {
     load,
-    togglePlayPause,
     seek,
     setVolume,
     getPosition,
+    play,
+    pause,
     duration,
     playing,
     volume,
@@ -57,9 +65,26 @@ export function AudioPlayer({ title, path }: AudioPlayerProps) {
     setIsDraggingSlider(false);
   };
 
+  useEffect(() => {
+    if (currentlyPlayingSong !== title || playing) {
+      pause();
+    } else {
+      play();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentlyPlayingSong, pause, play, title]);
+
+  const handleClick = () => {
+    if (currentlyPlayingSong === title) {
+      setCurrentlyPlayingSong(null);
+    } else {
+      setCurrentlyPlayingSong(title);
+    }
+  };
+
   return (
     <div className={styles["audio-player"]}>
-      <button onClick={togglePlayPause} className={styles["play-button"]}>
+      <button onClick={() => handleClick()} className={styles["play-button"]}>
         {playing ? (
           <Pause className={styles["pause-icon"]} />
         ) : (
