@@ -107,7 +107,7 @@ export function AudioPlayer({
               thumbsDisabled={[false, false]}
               defaultValue={[0, volume]}
               orientation={"vertical"}
-              onInput={(val: number[]) => setVolume(val[0])}
+              onInput={(val: number[]) => setVolume(Math.abs(val[0] - val[1]))}
               min="0"
               max="1"
               step="0.1"
