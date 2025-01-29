@@ -11,8 +11,6 @@
 
 @media (min-width: 768px) {
   .contact-section {
-    display: grid;  
-    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
   }
 }
@@ -23,7 +21,6 @@
   }
 
   .contact-section {
-    grid-template-columns: 482px 1fr;
     margin-top: var(--margin-md);
   }
 }

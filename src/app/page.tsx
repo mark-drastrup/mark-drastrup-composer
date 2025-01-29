@@ -14,7 +14,6 @@ export default function LandingPage() {
 
       <section className={styles["contact-section"]}>
         <ContactMe />
-        <ContactForm />
       </section>
     </main>
   );
