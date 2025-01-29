@@ -84,4 +84,11 @@
     .logo-wrapper {
         width: 240px
     }
+
+    .gradient {
+        top: -600px;
+        left: -400px;
+        width: 1000px;
+        height: 1200px;
+    }
 }
