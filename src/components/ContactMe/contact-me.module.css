@@ -1,0 +1,54 @@
+.contact-me {
+    width: 100%;
+    background: linear-gradient(to right, #8907E9, #B332FA) !important;
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+    position: relative;
+    padding: var(--padding-md);
+}
+
+.logo {
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 116px;
+    height: 227px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: var(--spacing-md);
+}
+
+.paragraph {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+@media (min-width: 768px) {
+    .contact-me {
+        margin-top: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        overflow: hidden;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .logo {
+        position:absolute;
+        top: auto;
+        transform: none;
+        left: -83px;
+        bottom: 0;
+        width: 354px;
+        height: 364px;
+    }
+}

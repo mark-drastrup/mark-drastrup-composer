@@ -1,0 +1,83 @@
+.audio-player {
+    background: var(--secondary-black);
+    height: 77px;
+    padding-inline: var(--padding-sm);
+    border-radius: var(--border-radius-sm);
+    display: grid;
+    grid-template-columns: 50px 1fr; 
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: var(--padding-sm);
+    row-gap: var(--spacing-sm);
+}
+
+.title-wrapper {
+    grid-column: 2;
+    grid-row: 1; 
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative
+}
+
+.progress-wrapper {
+    grid-column: 2; /* Span the second column */
+    grid-row: 2; /* Occupy the second row */
+    align-self: start;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1; /* Span the first column */
+    grid-row: 1 / 3; /* Span both rows */
+}
+
+.play-icon {
+    width: 28px;
+    height: 28px;
+    color: white;
+    margin-left: 4px;
+}
+
+.pause-icon {
+    width: 34px;
+    height: 34px;
+    color: white;
+}
+
+.time-label {
+    font-size: 12px;
+    color: white;
+    min-width: 35px;
+    max-width: 35px;
+}
+
+.speaker-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.volume-menu {
+    position: absolute;
+    right: -2px;
+    bottom: 0;
+    background: var(--secondary-black);
+    width: 30px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-sm);
+    border: none;
+}
