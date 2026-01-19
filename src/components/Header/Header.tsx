@@ -2,8 +2,8 @@
 
 import { BurgerMenu, Waves } from "@/icons";
 import { LogoAndNameWhite } from "@/icons/LogoAndNameWhite";
-import styles from "./Header.module.css";
-import { use, useEffect, useState } from "react";
+import styles from "./header.module.css";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
