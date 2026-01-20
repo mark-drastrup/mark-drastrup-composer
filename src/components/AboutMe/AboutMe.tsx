@@ -13,15 +13,6 @@ export function AboutMe() {
           emotionally and amplify the narratives they accompany.
         </p>
 
-        {/* <p className={styles.paragraph}>
-          I believe that music is more than just a background element —
-          it&apos;s an essential part of storytelling, capable of conveying
-          emotions, setting the tone, and immersing audiences in ways words
-          alone cannot. Each piece I compose is crafted with this philosophy in
-          mind, ensuring that the music not only supports but also enhances the
-          world it inhabits.
-        </p> */}
-
         <p className={styles.paragraph}>
           With a blend of traditional orchestration and modern electronic sound
           design, I strive to create music that is both timeless and innovative,
@@ -29,13 +20,14 @@ export function AboutMe() {
         </p>
       </div>
 
-      <Image
-        src="/images/profile.jpg"
-        alt="Composer Picture"
-        width="100"
-        height="100"
-        className={styles.image}
-      />
+      <div className={styles["image-wrapper"]}>
+        <Image
+          src="/images/profile.jpg"
+          alt="Composer Picture"
+          fill
+          sizes="(max-width: 1024px) 100vw, 465px"
+        />
+      </div>
     </section>
   );
 }
