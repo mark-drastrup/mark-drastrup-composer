@@ -33,8 +33,8 @@ export function LogoPurple({ className }: LogoPurpleProps) {
           y2="41.7"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#8604e8" />
-          <stop offset="1" stop-color="#b332fa" />
+          <stop offset="0" stopColor="#8604e8" />
+          <stop offset="1" stopColor="#b332fa" />
         </linearGradient>
       </defs>
       <g id="Layer_1-2" data-name="Layer 1">
