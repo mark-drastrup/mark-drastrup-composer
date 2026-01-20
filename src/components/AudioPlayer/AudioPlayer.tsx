@@ -36,7 +36,7 @@ export function AudioPlayer({
   } = useAudioPlayer();
   const position = useAudioTime(getPosition);
   const [showVolumeMenu, setShowVolumeMenu] = useState(false);
-  const [value, setValue] = useState([0, 0]);
+  const [value, setValue] = useState<[number, number]>([0, 0]);
   const [isDraggingSlider, setIsDraggingSlider] = useState(false);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function AudioPlayer({
     setIsDraggingSlider(true);
   };
 
-  const onInput = (val: number[]) => {
+  const onInput = (val: [number, number]) => {
     setValue(val);
   };
 
@@ -108,9 +108,9 @@ export function AudioPlayer({
               defaultValue={[0, volume]}
               orientation={"vertical"}
               onInput={(val: number[]) => setVolume(Math.abs(val[0] - val[1]))}
-              min="0"
-              max="1"
-              step="0.1"
+              min={0}
+              max={1}
+              step={0.1}
             />
           </div>
         )}
@@ -123,7 +123,7 @@ export function AudioPlayer({
           id="progress-slider"
           thumbsDisabled={[true, false]}
           rangeSlideDisabled={true}
-          min="0"
+          min={0}
           max={duration}
           value={value}
           onInput={onInput}

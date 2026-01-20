@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useGlobalAudioPlayer } from "react-use-audio-player";
 
 export function useAudioTime(getPosition: () => number) {
-  const frameRef = useRef<number>();
+  const frameRef = useRef<number>(0);
   const [pos, setPos] = useState(0);
-  // const { getPosition } = useGlobalAudioPlayer();
 
   useEffect(() => {
     const animate = () => {
