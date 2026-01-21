@@ -6,20 +6,20 @@ import styles from "./song-list.module.css";
 
 const SONGS = [
   {
+    title: "Noble Fool",
+    path: "audio/noble_fool.wav",
+  },
+  {
+    title: "Betrayal",
+    path: "audio/betrayal.wav",
+  },
+  {
+    title: "Synthetic Dreams",
+    path: "audio/synthetic_dreams.wav",
+  },
+  {
     title: "Waltzing Away",
     path: "audio/waltzing_away.wav",
-  },
-  {
-    title: "Battle Music",
-    path: "audio/battle_music.wav",
-  },
-  {
-    title: "Test Song 3",
-    path: "audio/battle_music.wav",
-  },
-  {
-    title: "Test Song 4",
-    path: "audio/battle_music.wav",
   },
 ];
 
