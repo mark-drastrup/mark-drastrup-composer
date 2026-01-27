@@ -1,0 +1,10 @@
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  flex: 1;
+  height: calc(
+    100vh - (169px + 96px)
+  ); /* Adjusted for header and footer height */
+}
