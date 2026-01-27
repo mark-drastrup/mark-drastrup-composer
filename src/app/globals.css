@@ -2,7 +2,7 @@
 
 :root {
   --primary-black: #161619;
-  --secondary-black: #25242A;
+  --secondary-black: #25242a;
 
   --primary-glow: radial-gradient(
     closest-side,
@@ -41,7 +41,8 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -49,10 +50,9 @@ html {
   overflow: hidden;
 }
 
-
 body {
   background: var(--primary-black);
-  height: 100vh;
+  height: 100dvh;
   color: white;
   overflow-y: auto;
   overflow-x: hidden;
@@ -70,11 +70,11 @@ body {
 #progress-slider .range-slider__thumb[data-upper] {
   width: 16px !important;
   height: 16px !important;
-  background: #8907E9;
+  background: #8907e9;
 }
 
 #progress-slider.range-slider {
-  background: var(--primary-black)
+  background: var(--primary-black);
 }
 
 #progress-slider .range-slider__range {
@@ -92,7 +92,7 @@ body {
 #volume-slider .range-slider__thumb[data-lower] {
   width: 16px !important;
   height: 16px !important;
-  background: white
+  background: white;
 }
 
 #volume-slider .range-slider__thumb[data-upper] {
@@ -101,7 +101,7 @@ body {
 }
 
 #volume-slider.range-slider {
-  background: var(--primary-black)
+  background: var(--primary-black);
 }
 
 #volume-slider .range-slider__range {
