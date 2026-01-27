@@ -26,7 +26,7 @@ export function Footer() {
       </div>
 
       <p className={styles.copyright}>
-        © 2024 your awesome website. <br className={styles.break} /> All rights
+        © 2026 Mark Drastrup. <br className={styles.break} /> All rights
         reserved.
       </p>
     </footer>
