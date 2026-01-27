@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Mark Drastrup - Composer",
   description:
     "I’m a composer creating music for video games and film, with a focus on cinematic orchestral scores and immersive electronic soundscapes. My goal is to support gameplay and storytelling through music that feels emotional, memorable, and alive.",
+  icons: {
+    icon: "/drastrup-logo.svg",
+  },
 };
 
 export default function RootLayout({
