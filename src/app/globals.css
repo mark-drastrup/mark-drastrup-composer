@@ -3,6 +3,8 @@
 :root {
   --primary-black: #161619;
   --secondary-black: #25242a;
+  --success-green: #2dd4a3;
+  --error-red: #f87171;
 
   --primary-glow: radial-gradient(
     closest-side,
