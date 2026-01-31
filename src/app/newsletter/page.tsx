@@ -47,27 +47,4 @@ export default function NewsletterPage() {
       </div>
     </main>
   );
-
-  // return (
-  //   <main className={styles["newsletter"]}>
-  //     <form onSubmit={(e) => handleSubmit(e)}>
-  //       <h2>Subscribe to our Newsletter</h2>
-  //       <label htmlFor="email">First name</label>
-  //       <input type="text" name="first_name" required />
-
-  //       <label htmlFor="email">Email Address:</label>
-  //       <input type="email" name="email" required />
-  //       <button type="submit" disabled={isPending}>
-  //         {isPending ? "Processing..." : "SUBSCRIBE"}
-  //       </button>
-  //     </form>
-
-  //     <div className="min-h-[75px] flex justify-center items-center">
-  //       {subscribeSuccess && (
-  //         <p className="text-green-500">{subscribeSuccess}</p>
-  //       )}
-  //       {subscribeError && <p className="text-red-500">{subscribeError}</p>}
-  //     </div>
-  //   </main>
-  // );
 }

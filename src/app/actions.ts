@@ -18,11 +18,20 @@ export const addSubscriber = async (formData: FormData) => {
       merge_fields: { FNAME: firstName },
     });
     return {
-      successMessage: `Success! ${email} was successfully subscribed to our newsletter!`,
+      successMessage: `Success! ${email} was successfully subscribed to the newsletter!`,
     };
   } catch (error) {
-    return {
-      errorMessage: `Ooops! There was a problem subscribing ${email} to our newsletter!`,
-    };
+    if (
+      error instanceof Error &&
+      (error as any).response?.body?.title === "Member Exists"
+    ) {
+      return {
+        errorMessage: `Ooops! It looks like the email ${email} is already subscribed to the newsletter!`,
+      };
+    } else {
+      return {
+        errorMessage: `Ooops! There was a problem subscribing ${email} to the newsletter!`,
+      };
+    }
   }
 };
