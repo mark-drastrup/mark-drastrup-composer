@@ -7,19 +7,19 @@ import styles from "./song-list.module.css";
 const SONGS = [
   {
     title: "Noble Fool",
-    path: "audio/noble_fool.wav",
+    path: "audio/noble_fool.mp3",
   },
   {
     title: "Betrayal",
-    path: "audio/betrayal.wav",
+    path: "audio/betrayal.mp3",
   },
   {
     title: "Synthetic Dreams",
-    path: "audio/synthetic_dreams.wav",
+    path: "audio/synthetic_dreams.mp3",
   },
   {
     title: "Waltzing Away",
-    path: "audio/waltzing_away.wav",
+    path: "audio/waltzing_away.mp3",
   },
 ];
 
