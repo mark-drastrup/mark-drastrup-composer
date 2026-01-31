@@ -1,0 +1,9 @@
+.input {
+  border: none;
+  margin-bottom: var(--spacing-sm);
+  height: 50px;
+  color: #161619;
+  font-family: inherit;
+  border-bottom: 1px solid #c2c2c2;
+  outline: none;
+}

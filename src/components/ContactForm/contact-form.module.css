@@ -55,6 +55,11 @@
   background: #333333;
 }
 
+.button:disabled {
+  background: #888888;
+  cursor: not-allowed;
+}
+
 .botton-icon-wrapper {
   display: flex;
   justify-content: center;
