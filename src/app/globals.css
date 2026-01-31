@@ -52,7 +52,7 @@ html {
 
 body {
   background: var(--primary-black);
-  height: 100vh;
+  height: 100dvh;
   color: white;
   overflow-y: auto;
   overflow-x: hidden;

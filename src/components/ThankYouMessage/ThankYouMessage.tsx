@@ -7,14 +7,18 @@ type ThankYouMessageProps = {
 export function ThankYouMessage({ reset }: ThankYouMessageProps) {
   return (
     <div className={styles["thank-you"]}>
-      <h3 className={styles.title}>Message Sent</h3>
+      <div>
+        <h3 className={styles.title}>Message Sent</h3>
 
-      <p className={styles.parapgrah}>
-        Thank you for reaching out to me! I will get back to you as soon as
-        possible.
-      </p>
+        <p className={styles.parapgrah}>
+          Thank you for reaching out to me! I will get back to you as soon as
+          possible.
+        </p>
+      </div>
 
-      <div onClick={reset}>Reset form</div>
+      <button className={styles.button} onClick={reset}>
+        Reset form
+      </button>
     </div>
   );
 }
