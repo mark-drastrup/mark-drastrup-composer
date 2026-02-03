@@ -4,6 +4,17 @@ import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/Card";
+import styles from "./login-form.module.css";
+import { Label } from "../ui/Label";
+import { Input } from "../ui/Input";
+import { Button } from "../ui/Button";
 
 export function LoginForm({
   className,
@@ -38,19 +49,19 @@ export function LoginForm({
 
   return (
     <div>
-      <div className="card">
-        <div className="card-header">
-          <div className="card-header">Login</div>
-          <div className="card-description">
+      <Card>
+        <CardHeader>
+          <CardTitle>Login</CardTitle>
+          <CardDescription>
             Enter your email below to login to your account
-          </div>
-        </div>
-        <div className="card-content">
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
           <form onSubmit={handleLogin}>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <label htmlFor="email">Email</label>
-                <input
+            <div className={styles["form-content"]}>
+              <div className={styles["form-group"]}>
+                <Label htmlFor="email">Email</Label>
+                <Input
                   id="email"
                   type="email"
                   placeholder="m@example.com"
@@ -59,17 +70,17 @@ export function LoginForm({
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="password">Password</label>
+              <div className={styles["form-group"]}>
+                <div className={styles["label-wrapper"]}>
+                  <Label htmlFor="password">Password</Label>
                   <Link
-                    href="/auth/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                    href="/forgot-password"
+                    className={styles["forgot-password-link"]}
                   >
                     Forgot your password?
                   </Link>
                 </div>
-                <input
+                <Input
                   id="password"
                   type="password"
                   required
@@ -77,23 +88,20 @@ export function LoginForm({
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <button type="submit" className="w-full" disabled={isLoading}>
+              {error && <p className={styles["error-message"]}>{error}</p>}
+              <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Logging in..." : "Login"}
-              </button>
+              </Button>
             </div>
-            <div className="mt-4 text-center text-sm">
+            <div className={styles["footer-text"]}>
               Don&apos;t have an account?{" "}
-              <Link
-                href="/auth/sign-up"
-                className="underline underline-offset-4"
-              >
+              <Link href="/sign-up" className={styles["footer-text-link"]}>
                 Sign up
               </Link>
             </div>
           </form>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
