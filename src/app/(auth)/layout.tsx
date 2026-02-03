@@ -1,7 +1,13 @@
+import styles from "./layout.module.css";
+
 export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <div className={styles["auth-layout"]}>
+      <div className={styles["auth-layout-content"]}>{children}</div>
+    </div>
+  );
 }

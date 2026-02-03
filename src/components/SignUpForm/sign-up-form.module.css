@@ -1,0 +1,35 @@
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.button {
+  width: 100%;
+}
+
+.footer-text {
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 1rem;
+}
+
+.footer-text-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: white;
+}
+
+.error-message {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

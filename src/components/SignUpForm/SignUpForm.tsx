@@ -1,25 +1,22 @@
 "use client";
 
-// import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
-// import { Button } from "@/components/ui/button";
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardHeader,
-//   CardTitle,
-// } from "@/components/ui/card";
-// import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/Card";
+import { Label } from "../ui/Label";
+import { Input } from "../ui/Input";
+import { Button } from "../ui/Button";
+import styles from "./sign-up-form.module.css";
 
-export function SignUpForm({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) {
+export function SignUpForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -48,7 +45,7 @@ export function SignUpForm({
         },
       });
       if (error) throw error;
-      router.push("/auth/sign-up-success");
+      router.push("/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
@@ -58,17 +55,17 @@ export function SignUpForm({
 
   return (
     <div>
-      <div className="card">
-        <div className="card-header">
-          <div className="card-title">Sign up</div>
-          <div className="card-description">Create a new account</div>
-        </div>
-        <div className="card-content">
+      <Card>
+        <CardHeader>
+          <CardTitle>Sign up</CardTitle>
+          <CardDescription>Create a new account</CardDescription>
+        </CardHeader>
+        <CardContent>
           <form onSubmit={handleSignUp}>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <label htmlFor="email">Email</label>
-                <input
+            <div className={styles["form-content"]}>
+              <div className={styles["form-group"]}>
+                <Label htmlFor="email">Email</Label>
+                <Input
                   id="email"
                   type="email"
                   placeholder="m@example.com"
@@ -77,11 +74,10 @@ export function SignUpForm({
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="password">Password</label>
-                </div>
-                <input
+              <div className={styles["form-group"]}>
+                <Label htmlFor="password">Password</Label>
+
+                <Input
                   id="password"
                   type="password"
                   required
@@ -89,11 +85,9 @@ export function SignUpForm({
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <label htmlFor="repeat-password">Repeat Password</label>
-                </div>
-                <input
+              <div className={styles["form-group"]}>
+                <Label htmlFor="repeat-password">Repeat Password</Label>
+                <Input
                   id="repeat-password"
                   type="password"
                   required
@@ -101,20 +95,24 @@ export function SignUpForm({
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />
               </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <button type="submit" className="w-full" disabled={isLoading}>
+              {error && <p className={styles["error-message"]}>{error}</p>}
+              <Button
+                type="submit"
+                className={styles["button"]}
+                disabled={isLoading}
+              >
                 {isLoading ? "Creating an account..." : "Sign up"}
-              </button>
+              </Button>
             </div>
-            <div className="mt-4 text-center text-sm">
+            <div className={styles["footer-text"]}>
               Already have an account?{" "}
-              <Link href="/auth/login" className="underline underline-offset-4">
+              <Link href="/login" className={styles["footer-text-link"]}>
                 Login
               </Link>
             </div>
           </form>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
