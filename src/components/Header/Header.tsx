@@ -56,13 +56,6 @@ export function Header() {
         >
           Contact
         </a>
-        <a
-          className={styles.navlink}
-          href="/newsletter"
-          onClick={() => setOpenMenu(false)}
-        >
-          Newsletter
-        </a>
       </nav>
 
       <nav
@@ -97,13 +90,6 @@ export function Header() {
           onClick={() => setOpenMenu(false)}
         >
           Contact
-        </a>
-        <a
-          className={styles.navlink}
-          href="/newsletter"
-          onClick={() => setOpenMenu(false)}
-        >
-          Newsletter
         </a>
 
         <Waves className={styles.waves} />
