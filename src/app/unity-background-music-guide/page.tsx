@@ -5,7 +5,7 @@ import { addSubscriber } from "../actions";
 import styles from "./page.module.css";
 import { FormWidget, FormWidgetTextInput } from "@/components/FormWidget";
 
-export default function NewsletterPage() {
+export default function UnityBackgroundMusicGuidePage() {
   const [isPending, setIsPending] = useState(false);
   const [subscribeSuccess, setSubscribeSuccess] = useState("");
   const [subscribeError, setSubscribeError] = useState("");
@@ -29,9 +29,9 @@ export default function NewsletterPage() {
     <main className={styles["newsletter"]}>
       <div className={styles["widget-wrapper"]}>
         <FormWidget
-          title="The aspiring composers guide to background music in games"
-          description="In this guide, you'll get 5 simple steps to add background music to a game in the Unity game engine."
-          submitButtonText="Sign up"
+          title="Free guide: 5 simple steps to adding music in Unity."
+          description="In this beginner-friendly guide, you’ll learn how to import music into Unity, and loop it seamlessly — without any coding."
+          submitButtonText="Send me the guide"
           isLoading={isPending}
           successMessage={subscribeSuccess}
           errorMessage={subscribeError}
