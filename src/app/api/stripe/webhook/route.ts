@@ -1,3 +1,4 @@
+import { createAdminClient } from "@/lib/supabase/admin";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -38,16 +39,84 @@ export async function POST(req: Request) {
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
 
-      // Get the courseId and userId from the metadata
+      // Get the courseId, userId and email from the metadata
       const courseId = session.metadata?.courseId;
-      const userId = session.metadata?.userId;
+      const email = session.customer_details?.email;
 
-      if (!courseId || !userId) {
+      if (!courseId || !email) {
         return new NextResponse("Missing metadata", { status: 400 });
       }
 
-      // ENROLL USER IN COURSE
-      console.log("THIS IS THE METADATA", session.metadata);
+      const supabase = await createAdminClient();
+
+      let userId;
+
+      // Check if the user already exists
+      const { data: existingUserId, error } = await supabase.rpc(
+        "get_user_id_by_email",
+        {
+          email: email,
+        }
+      );
+
+      if (error) {
+        console.error("Error fetching user by email:", error);
+        return new NextResponse("Error fetching user", { status: 500 });
+      }
+
+      if (existingUserId.length) {
+        userId = existingUserId[0].id;
+      } else {
+        const { data: newUser, error: createUserError } =
+          await supabase.auth.admin.createUser({
+            email,
+            email_confirm: true,
+          });
+
+        if (createUserError) {
+          console.error("Error creating user:", createUserError);
+          return new NextResponse(
+            JSON.stringify({ error: "Error creating user" }),
+            { status: 500 }
+          );
+        }
+
+        userId = newUser.user?.id;
+
+        if (!userId) {
+          console.error(
+            "User creation succeeded, but no user ID was returned."
+          );
+          return new NextResponse(
+            JSON.stringify({ error: "User creation failed" }),
+            { status: 500 }
+          );
+        }
+
+        const { error: otpError } = await supabase.auth.signInWithOtp({
+          email,
+        });
+
+        if (otpError) {
+          console.error("Error signing in user with OTP:", {
+            email,
+            error: otpError,
+          });
+          return new NextResponse(
+            JSON.stringify({ error: "Error signing in user" }),
+            { status: 500 }
+          );
+        }
+      }
+
+      // TODO: Implement enrollment logic
+      // await supabase.from('enrollments').insert({
+      //   student_id: userId,
+      //   course_id: courseId,
+      //   stripe_payment_intent_id: paymentIntent.id,
+      //   status: 'active',
+      // });
+
       return new NextResponse(null, { status: 200 });
     }
 
