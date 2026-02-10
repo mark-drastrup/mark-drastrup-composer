@@ -4,7 +4,6 @@ import { BurgerMenu, Waves } from "@/icons";
 import { LogoAndNameWhite } from "@/icons/LogoAndNameWhite";
 import styles from "./header.module.css";
 import { useEffect, useState } from "react";
-import { createStripeCheckout } from "@/actions/createStripeCheckout";
 import { useRouter } from "next/navigation";
 
 export function Header() {
@@ -18,19 +17,6 @@ export function Header() {
       document.body.style.overflowY = "auto";
     }
   }, [openMenu]);
-
-  const handleEnroll = async () => {
-    try {
-      const { url } = await createStripeCheckout("course1", "user1");
-
-      if (url) {
-        router.push(url);
-      }
-    } catch (error) {
-      console.error("Error in handleEnroll:", error);
-      throw new Error("Failed to create checkout session");
-    }
-  };
 
   return (
     <header className={styles.header} id="home">
@@ -72,8 +58,6 @@ export function Header() {
         >
           Contact
         </a>
-
-        <button onClick={() => handleEnroll()}>STRIPE TEST</button>
       </nav>
 
       <nav
