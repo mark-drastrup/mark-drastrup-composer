@@ -4,9 +4,11 @@ import { BurgerMenu, Waves } from "@/icons";
 import { LogoAndNameWhite } from "@/icons/LogoAndNameWhite";
 import styles from "./header.module.css";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (openMenu) {
