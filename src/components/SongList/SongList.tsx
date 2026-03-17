@@ -6,6 +6,10 @@ import styles from "./song-list.module.css";
 
 const SONGS = [
   {
+    title: "King of the Hollow Court",
+    path: "audio/king_of_the_hollow_court.mp3",
+  },
+  {
     title: "Noble Fool",
     path: "audio/noble_fool.mp3",
   },
