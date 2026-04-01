@@ -4,9 +4,7 @@ import styles from "./hero.module.css";
 export function Hero() {
   return (
     <section className={styles["hero-wrapper"]}>
-      <h1 className={styles.title}>
-        VIDEO GAME MUSIC & <br /> FILM COMPOSER
-      </h1>
+      <h1 className={styles.title}>VIDEO GAME MUSIC COMPOSER</h1>
 
       <iframe
         className={styles.video}

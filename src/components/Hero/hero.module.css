@@ -11,11 +11,13 @@
   font-size: 44px;
   line-height: 53px;
   margin-bottom: var(--margin-md);
+  width: 100%;
+  text-align: center;
 }
-  
+
 .video {
   height: 190px;
-  width:110%;
+  width: 110%;
   border: none;
   border-radius: 20px;
 }
@@ -34,13 +36,13 @@
 
 @media (min-width: 640px) {
   .title {
-      align-self: flex-start;
+    align-self: flex-start;
   }
 }
 
 @media (min-width: 768px) {
   .hero-wrapper {
-    width: 100%
+    width: 100%;
   }
 
   .title {
@@ -78,11 +80,8 @@
   }
 }
 
-
 @media (min-width: 1100px) {
   .waves {
-    display: none
+    display: none;
   }
 }
-
-
