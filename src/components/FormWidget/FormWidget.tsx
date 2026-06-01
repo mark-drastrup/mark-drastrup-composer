@@ -8,6 +8,7 @@ type FormWidgetProps = {
   isLoading: boolean;
   successMessage?: string;
   errorMessage?: string;
+  leadMagnetId?: string;
   children: React.ReactNode;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 };
@@ -19,6 +20,7 @@ export function FormWidget({
   successMessage,
   isLoading,
   errorMessage,
+  leadMagnetId,
   children,
   onSubmit,
 }: FormWidgetProps) {
@@ -50,6 +52,8 @@ export function FormWidget({
             <ArrowRight className={styles["button-icon"]} />
           </div>
         </button>
+
+        <input type="hidden" name="lead-magnet" value={leadMagnetId} />
       </form>
     </div>
   );

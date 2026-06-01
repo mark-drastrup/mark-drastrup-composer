@@ -29,13 +29,13 @@ export default function UnityBackgroundMusicGuidePage() {
     <main className={styles["newsletter"]}>
       <div className={styles["widget-wrapper"]}>
         <FormWidget
-          title="Free guide: 5 simple steps to adding music in Unity."
-          description="In this beginner-friendly guide, you’ll learn how to import music into Unity, and loop it seamlessly — without any coding."
-          submitButtonText="Send me the guide"
+          title="Free midi for a gameboy track"
+          description="This midi track contains the full gameboy track I have demoed on my channel."
+          submitButtonText="Send me the midi tracks"
           isLoading={isPending}
           successMessage={subscribeSuccess}
           errorMessage={subscribeError}
-          leadMagnetId="unity-background-music-guide"
+          leadMagnetId="gameboy-midi-track"
           onSubmit={handleSubmit}
         >
           <FormWidgetTextInput
