@@ -10,12 +10,14 @@ mailchimp.setConfig({
 export const addSubscriber = async (formData: FormData) => {
   const email = formData.get("email");
   const firstName = formData.get("first_name");
+  const leadMagnet = formData.get("lead-magnet") as string;
 
   try {
     await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
       email_address: email,
       status: "subscribed",
       merge_fields: { FNAME: firstName },
+      tags: [leadMagnet],
     });
     return {
       successMessage: `Success! ${email} was successfully subscribed to the newsletter!`,
