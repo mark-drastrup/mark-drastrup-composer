@@ -6,6 +6,10 @@ import styles from "./song-list.module.css";
 
 const SONGS = [
   {
+    title: "Bloody Duke Game Trailer Music",
+    path: "audio/bloody_duke_game_trailer.mp3",
+  },
+  {
     title: "King of the Hollow Court",
     path: "audio/king_of_the_hollow_court.mp3",
   },
