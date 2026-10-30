@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { SanityLive } from "@/sanity/lib/live";
 
 export default function PublicLayout({
   children,
@@ -11,6 +12,7 @@ export default function PublicLayout({
       <Header />
       {children}
       <Footer />
+      <SanityLive />
     </>
   );
 }
