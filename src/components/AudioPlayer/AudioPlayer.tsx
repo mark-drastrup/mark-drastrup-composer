@@ -11,17 +11,19 @@ import { useAudioTime } from "@/hooks/useAudioTime";
 import { SpeakerLoud } from "@/icons/SpeakerLoud";
 
 type AudioPlayerProps = {
+  id: string;
   title: string;
   path: string;
-  currentlyPlayingSong: string | null;
-  setCurrentlyPlayingSong: (song: string | null) => void;
+  currentlyPlayingTrack: string | null;
+  setCurrentlyPlayingTrack: (trackId: string | null) => void;
 };
 
 export function AudioPlayer({
+  id,
   title,
   path,
-  currentlyPlayingSong,
-  setCurrentlyPlayingSong,
+  currentlyPlayingTrack,
+  setCurrentlyPlayingTrack,
 }: AudioPlayerProps) {
   const {
     load,
@@ -66,19 +68,19 @@ export function AudioPlayer({
   };
 
   useEffect(() => {
-    if (currentlyPlayingSong !== title || playing) {
+    if (currentlyPlayingTrack !== id || playing) {
       pause();
     } else {
       play();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentlyPlayingSong, pause, play, title]);
+  }, [currentlyPlayingTrack, pause, play, id]);
 
   const handleClick = () => {
-    if (currentlyPlayingSong === title) {
-      setCurrentlyPlayingSong(null);
+    if (currentlyPlayingTrack === id) {
+      setCurrentlyPlayingTrack(null);
     } else {
-      setCurrentlyPlayingSong(title);
+      setCurrentlyPlayingTrack(id);
     }
   };
 

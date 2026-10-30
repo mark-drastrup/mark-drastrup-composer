@@ -13,6 +13,40 @@
  */
 
 // Source: schema.json
+export type Showcase = {
+  _id: string;
+  _type: "showcase";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  tracks?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "track";
+  }>;
+};
+
+export type Track = {
+  _id: string;
+  _type: "track";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  audio?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+};
+
 export type Module = {
   _id: string;
   _type: "module";
@@ -228,5 +262,21 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type AllSanitySchemaTypes = Module | Lesson | Slug | Course | Category | SanityImageCrop | SanityImageHotspot | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
+export type AllSanitySchemaTypes = Showcase | Track | Module | Lesson | Slug | Course | Category | SanityImageCrop | SanityImageHotspot | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./src/sanity/lib/queries.ts
+// Variable: SHOWCASE_QUERY
+// Query: *[_id == "showcase"][0].tracks[]->{  _id,  title,  "audioUrl": audio.asset->url}
+export type SHOWCASE_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  audioUrl: string | null;
+}> | null;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_id == \"showcase\"][0].tracks[]->{\n  _id,\n  title,\n  \"audioUrl\": audio.asset->url\n}": SHOWCASE_QUERYResult;
+  }
+}

@@ -1,15 +1,32 @@
 import { AboutMe } from "@/components/AboutMe/AboutMe";
 import styles from "./page.module.css";
 import { Hero } from "@/components/Hero/Hero";
-import { SongList } from "@/components/SongList/SongList";
+import { Showcase, type ShowcaseTrack } from "@/components/Showcase/Showcase";
 import { ContactMe } from "@/components/ContactMe/ContactMe";
-import { ContactForm } from "@/components/ContactForm/ContactForm";
+import { sanityFetch } from "@/sanity/lib/live";
+import { SHOWCASE_QUERY } from "@/sanity/lib/queries";
 
-export default function LandingPage() {
+async function getShowcaseTracks(): Promise<ShowcaseTrack[]> {
+  try {
+    const { data } = await sanityFetch({ query: SHOWCASE_QUERY });
+    // Drop Tracks that are missing a title or uploaded audio
+    return (data ?? []).filter(
+      (track): track is ShowcaseTrack =>
+        Boolean(track?.title && track?.audioUrl)
+    );
+  } catch (error) {
+    console.error("Failed to fetch Showcase from Sanity", error);
+    return [];
+  }
+}
+
+export default async function LandingPage() {
+  const tracks = await getShowcaseTracks();
+
   return (
     <main className={styles["main-content"]}>
       <Hero />
-      <SongList />
+      {tracks.length > 0 && <Showcase tracks={tracks} />}
       <AboutMe />
 
       <section className={styles["contact-section"]}>

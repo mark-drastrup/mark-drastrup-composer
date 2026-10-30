@@ -18,7 +18,18 @@ export default defineConfig({
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
-  schema,
+  schema: {
+    ...schema,
+    // The Showcase is a singleton: hide it from "Create new document"
+    templates: (templates) =>
+      templates.filter(({schemaType}) => schemaType !== 'showcase'),
+  },
+  document: {
+    actions: (actions, {schemaType}) =>
+      schemaType === 'showcase'
+        ? actions.filter(({action}) => action !== 'duplicate' && action !== 'delete')
+        : actions,
+  },
   plugins: [
     structureTool({structure}),
     // Vision is for querying with GROQ from inside the Studio
