@@ -1,7 +1,6 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -71,15 +70,7 @@ export function LoginForm({
                 />
               </div>
               <div className={styles["form-group"]}>
-                <div className={styles["label-wrapper"]}>
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="/forgot-password"
-                    className={styles["forgot-password-link"]}
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
+                <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
                   type="password"
@@ -92,12 +83,6 @@ export function LoginForm({
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Logging in..." : "Login"}
               </Button>
-            </div>
-            <div className={styles["footer-text"]}>
-              Don&apos;t have an account?{" "}
-              <Link href="/sign-up" className={styles["footer-text-link"]}>
-                Sign up
-              </Link>
             </div>
           </form>
         </CardContent>

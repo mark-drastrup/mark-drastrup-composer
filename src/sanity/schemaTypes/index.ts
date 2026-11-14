@@ -1,18 +1,8 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { courseType } from "./courseType";
-import { lessonType } from "./lessonType";
 import { categoryType } from "./categoryType";
-import { moduleType } from "./moduleType";
 import { trackType } from "./trackType";
 import { showcaseType } from "./showcaseType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [
-    courseType,
-    lessonType,
-    categoryType,
-    moduleType,
-    trackType,
-    showcaseType,
-  ],
+  types: [categoryType, trackType, showcaseType],
 };
