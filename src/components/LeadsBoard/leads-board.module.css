@@ -1,0 +1,371 @@
+/* Indie RPG Leads board. Theme variables are scoped to .board (not :root) so
+   they never leak into the rest of the site. Font-family is inherited from the
+   app (Montserrat); only weight/size are set here. */
+.board {
+  --bg: #f3f4f7;
+  --surface: #ffffff;
+  --ink: #1c1f2a;
+  --muted: #5b6174;
+  --line: #dcdfe7;
+  --brass: #94650f;
+  --brass-soft: #f5ead2;
+  --link: #2b5884;
+  --focus: #2b5884;
+  --s-new: #2b5884;
+  --s-contacted: #6b54a0;
+  --s-replied: #1c7466;
+  --s-talks: #94650f;
+  --s-won: #2c7a31;
+  --s-nofit: #7e8494;
+  --bad: #a8322b;
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  .board {
+    --bg: #12141b;
+    --surface: #1a1d27;
+    --ink: #e7e9f0;
+    --muted: #9da3b5;
+    --line: #2d3142;
+    --brass: #ddae4e;
+    --brass-soft: #3a2f17;
+    --link: #8db6e2;
+    --focus: #8db6e2;
+    --s-new: #8db6e2;
+    --s-contacted: #b7a2e6;
+    --s-replied: #6ccdb9;
+    --s-talks: #ddae4e;
+    --s-won: #7fcb83;
+    --s-nofit: #9da3b5;
+    --bad: #f08a80;
+  }
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 16px 64px;
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+}
+.h1 {
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 38px);
+  line-height: 1.1;
+  margin: 0;
+}
+.lede {
+  margin: 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* Status bar / filters */
+.bar {
+  display: grid;
+  gap: 10px;
+}
+.chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+.chip {
+  flex: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.n {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.chip[aria-pressed="true"] .n {
+  color: var(--bg);
+  opacity: 0.75;
+}
+.tools {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search {
+  flex: 1 1 200px;
+  min-width: 0;
+  font-size: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.starFilter[aria-pressed="true"] {
+  background: var(--brass-soft);
+  color: var(--brass);
+  border-color: var(--brass);
+}
+.starFilter[aria-pressed="true"] .n {
+  color: var(--brass);
+}
+
+/* Notices */
+.notice {
+  font-size: 14px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--surface);
+}
+.notice strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.actionError {
+  font-size: 14px;
+  color: var(--bad);
+  border: 1px solid color-mix(in srgb, var(--bad) 40%, transparent);
+  background: color-mix(in srgb, var(--bad) 10%, var(--surface));
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+/* Lead cards */
+.list {
+  display: grid;
+  gap: 12px;
+}
+.lead {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.starred {
+  border-color: color-mix(in srgb, var(--brass) 55%, var(--line));
+}
+.dim {
+  opacity: 0.72;
+}
+.top {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.star {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  margin: -2px 0 0 -4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--line);
+  border-radius: 6px;
+}
+.star[aria-pressed="true"] {
+  color: var(--brass);
+}
+.title {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+.game {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.stage {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.date {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.status {
+  flex: none;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--s) 45%, transparent);
+  background: color-mix(in srgb, var(--s) 12%, var(--surface));
+  color: var(--s);
+  max-width: 130px;
+  cursor: pointer;
+}
+.dl {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+.row dt {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.row dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.row a {
+  color: var(--link);
+  text-underline-offset: 2px;
+}
+.notes {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 40px;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.saved {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 1em;
+}
+
+/* Add form */
+.add {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.add summary {
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.add form {
+  display: grid;
+  gap: 10px;
+  padding: 0 16px 16px;
+}
+.field {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.field input,
+.field textarea {
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  min-width: 0;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.btn {
+  justify-self: start;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+}
+.formMsg {
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 1em;
+}
+.err {
+  color: var(--bad);
+}
+
+.board :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .top {
+    flex-wrap: wrap;
+  }
+}
